@@ -113,7 +113,7 @@ margin-top: 20px;
 }
 button {
   background-color: palevioletred;
-  color: white;
+  color: black;
   border: none;
   border-radius: 12px;
   padding: 12px 24px;
@@ -121,8 +121,11 @@ button {
 }
  
 .Dark-Mode button {
-  background-color: rgb(187, 79, 115);
-  color: #ffffff;
-  border: 1px solid #666;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 16px;
 }
  

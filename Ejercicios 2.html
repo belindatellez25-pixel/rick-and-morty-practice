@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rickandmortyap</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="shadow">
+    <div class="container-logo">
+      <img src="d:\IMPLEMENTA\Proyect\Ejercicios\OIP.webp" alt="Logo" />
+    </div>
+    <div>
+      <button id="btn-Dark-Mode">Dark Mode</button>
+    </div>
+  </header>
+ 
+  <section class="main-container">
+    <p>Active theory</p>
+    <h1>Rick and Morty</h1>
+    <span>television & file/nominee</span>
+  </section>
+ 
+  <div class="search">
+    <input class="shadow" type="text" placeholder="buscar personaje" />
+    <button>Buscar</button>
+  </div>
+ 
+  <section id="personajes" class="person"></section>
+ 
+  <div>
+    <button id="btn-load-more">Cargar más personajes</button>
+  </div>
+ 
+  <script>
+    let info_page = null;
+    function renderloader (){
+      const contenedor= document.getElementById('personajes')
+      const loader = document.createElement('div')
+      loader.setAttribute('id','loader')
+      loader.appendChild(document.createTextNode('Cargando...'))
+      contenedor.appendChild(loader)
+    }
+    function hiddenLoader(){
+      const contenedor = document.getElementById('personajes')
+      const loader= document.getElementById('loader')
+      contenedor.appendChild(loader)
+
+    }
+ 
+    async function obtener_personaje() {
+      const url = "https://rickandmortyapi.com/api/character";
+      renderloader()
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const personajes = data.results;
+        info_page = data.info;
+ 
+        console.log("variable response", info_page);
+        console.log("array", personajes);
+ 
+        const contenedor = document.getElementById("personajes");
+        personajes.forEach((element) => {
+          const contenedor_personaje = document.createElement("div");
+          const imagen = document.createElement("img");
+          imagen.src = element.image;
+          imagen.alt = element.name;
+          contenedor_personaje.appendChild(imagen);
+          contenedor.appendChild(contenedor_personaje);
+        });
+      } catch (err) {
+        console.error("Error al obtener personajes:", err);
+      }
+    }
+ 
+    function loadMore() {
+      console.log("load more");
+    }
+function toggleDarkMode() {
+      const body = document.body;
+      const darkModeButton = document.getElementById("btn-Dark-Mode");
+      body.classList.toggle("Dark-Mode");
+      if (body.classList.contains("Dark-Mode")) {
+        darkModeButton.textContent = "dark mode";
+      } else {
+        darkModeButton.textContent = "purple mode";
+      }
+    }
+    
+    document.getElementById("btn-load-more").addEventListener("click", loadMore);
+    document.getElementById("btn-Dark-Mode").addEventListener("click", toggleDarkMode);
+    
+    obtener_personaje();
+    
+  </script>
+</body>
+</html>
+ 

@@ -1,0 +1,128 @@
+body{
+    font-family: arial,sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(133, 133, 190);
+}
+ 
+header{
+    padding:20px ;
+    display: flex ;
+    flex-direction: row ;
+    justify-content: space-between ;
+     background-color: rgb(100, 100, 176);
+}
+ 
+ 
+.container-logo{
+    height:50px ;
+    width: 50px;
+}
+ 
+.container-logo img{
+    height:100% ;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 30px;
+}
+ 
+ 
+.shadow{
+    box-shadow: 0 4px 8px rgb(34, 34, 34);
+}
+ 
+.main-container{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url('assets/fondo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+ 
+ 
+.main-container h1{
+margin-top: 40px;
+color: #e0e6f1;
+}
+ 
+ 
+.main-container p{
+margin-top: 40px;
+color: #bfcce2;
+}
+ 
+.main-container span{
+margin-top: 40px;
+color: #e4eaf5;
+}
+ 
+.search{
+   margin-top: 40px;
+   display: flex;
+   justify-content: start;
+   align-items: center;
+   flex-direction: column;
+}
+ 
+ 
+.search input{
+    height: 30px; ;
+    width: 500px ;
+    border-radius: 15px; 
+}
+ 
+ 
+.search button{
+    height: 30px;
+    width: 100px;
+    border-radius: 15px;
+    margin-top: 20px;
+    background-color: palevioletred;
+    border: none;
+    cursor: pointer;
+}
+ 
+ 
+.person{
+display: flex;
+  flex-wrap: wrap; 
+  gap: 10px;
+  justify-content: center;
+}
+ 
+.person img{
+display: block;
+margin-top: 20px;
+}
+
+.Dark-Mode {
+    background-color: black;
+    color: white;
+}
+ 
+.Dark-Mode header {
+    background-color: rgb(27, 27, 27);
+}
+ 
+.Dark-Mode .main-container {
+    background-color: black;
+}
+button {
+  background-color: palevioletred;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 16px;
+}
+ 
+.Dark-Mode button {
+  background-color: rgb(187, 79, 115);
+  color: #ffffff;
+  border: 1px solid #666;
+}
+ 
